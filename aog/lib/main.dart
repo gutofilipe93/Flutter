@@ -1,6 +1,6 @@
-import 'package:aog/helpers/TextStyleHelper.dart';
-import 'package:aog/widgets/input.dart';
+import 'package:aog/helpers/LayoutHelper.dart';
 import 'package:aog/widgets/logo-widget.dart';
+import 'package:aog/widgets/submit-form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   var _gasController = new MoneyMaskedTextController();
   var _alcoolController = new MoneyMaskedTextController();
-  var textStyleHelper = new TextStyleHelper();
+  var textStyleHelper = new LayoutHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -36,24 +36,11 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Logo(),
-          Input(_gasController, "Gasolina"),
-          Input(_alcoolController, "Álcool"),
-          Container(
-            margin: EdgeInsets.all(30),
-            height: 60,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: FlatButton(
-              child: Text(
-                "CALCULAR",
-                style: textStyleHelper.textStyle(),
-                textAlign: TextAlign.center,
-              ),
-              onPressed: () {},
-            ),
-          ),
+          SubmitForm(
+              alcoolController: _alcoolController,
+              gasController: _gasController,
+              busy: false,
+              func: () {})
         ],
       ),
     );

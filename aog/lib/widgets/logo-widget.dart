@@ -1,4 +1,4 @@
-import 'package:aog/helpers/TextStyleHelper.dart';
+import 'package:aog/helpers/LayoutHelper.dart';
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
@@ -14,7 +14,7 @@ class Logo extends StatelessWidget {
         SizedBox(height: 10),
         Text(
           "Alcool ou Gasolina",
-          style: new TextStyleHelper().textStyle(),
+          style: new LayoutHelper().textStyle(Colors.white, 20),
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 20)

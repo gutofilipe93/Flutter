@@ -1,4 +1,4 @@
-import 'package:aog/helpers/TextStyleHelper.dart';
+import 'package:aog/helpers/LayoutHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
@@ -6,7 +6,7 @@ class Input extends StatelessWidget {
   var gasController = new MoneyMaskedTextController();
   String label = '';
 
-  Input(@required this.gasController, @required this.label);
+  Input({@required this.gasController, @required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Input extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             label,
-            style: new TextStyleHelper().textStyle(),
+            style: new LayoutHelper().textStyle(Colors.white, 35),
           ),
         ),
         SizedBox(width: 20),
@@ -25,7 +25,7 @@ class Input extends StatelessWidget {
           child: TextFormField(
             keyboardType: TextInputType.number,
             controller: gasController,
-            style: new TextStyleHelper().textStyle(),
+            style: new LayoutHelper().textStyle(Colors.white, 35),
             decoration: InputDecoration(border: InputBorder.none),
           ),
         )
